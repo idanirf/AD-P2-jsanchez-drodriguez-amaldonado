@@ -7,8 +7,8 @@ import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "Usuarios")
-@NamedQuery(name = "Usuarios.findAll", query = "SELECT t FROM Usuario t")
+@Table(name = "Usuario")
+@NamedQuery(name = "Usuario.findAll", query = "SELECT t FROM Usuario t")
 data class Usuario(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id:Int,
