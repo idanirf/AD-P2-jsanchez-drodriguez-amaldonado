@@ -1,5 +1,6 @@
 package models
 
+import models.enums.TipoEstado
 import org.hibernate.annotations.Type
 import java.time.LocalDate
 import java.util.*
@@ -15,31 +16,11 @@ data class Pedido(
     @Type(type = "uuid-char")
     val uuid: UUID,
     val estado: TipoEstado,
-    @Type(type = "org.hibernate.type.LocalDateType")
     val fechaEntrada: LocalDate,
-    @Type(type = "org.hibernate.type.LocalDateType")
     val fechaSalidaProgramada: LocalDate,
-    @Type(type = "org.hibernate.type.LocalDateType")
     val fechaEntrega: LocalDate,
     val precio: Double,
     @OneToOne
     @JoinColumn(name = "encordador_id", referencedColumnName = "id", nullable = true)
     val usuario: Usuario,
 )
-
-enum class TipoEstado(val est: String) {
-    RECIBIDO("RECIBIDO"),
-    EN_PROCESO("EN PROCESO"),
-    TERMINADO("TERMINADO");
-
-    companion object {
-        fun from(estado: String): TipoEstado {
-            return when (estado.uppercase()) {
-                "RECIBIDO" -> RECIBIDO
-                "EN_PROCESO" -> EN_PROCESO
-                "TERMINADO" -> TERMINADO
-                else -> throw IllegalArgumentException("Estado no reconocido.")
-            }
-        }
-    }
-}
