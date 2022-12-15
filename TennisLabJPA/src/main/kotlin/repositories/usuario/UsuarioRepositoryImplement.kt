@@ -11,7 +11,6 @@ class UsuarioRepositoryImplement: IUsuarioRepository {
         var usuarios = mutableListOf<Usuario>()
         HibernateManager.query {
             val query: TypedQuery<Usuario> = manager.createNamedQuery("Usuario.findAll", Usuario::class.java)
-
             usuarios = query.resultList
         }
         return usuarios
@@ -19,14 +18,29 @@ class UsuarioRepositoryImplement: IUsuarioRepository {
     }
 
     override fun findById(id: Int): Usuario? {
-        TODO("Not yet implemented")
+        var usuario: Usuario? = null
+        HibernateManager.query {
+            usuario = manager.find(Usuario::class.java, id)
+        }
+        return usuario
     }
 
     override fun save(entity: Usuario): Usuario {
-        TODO("Not yet implemented")
+        HibernateManager.transaction {
+            manager.merge(entity)
+        }
+        return entity
     }
 
     override fun delete(id: Int): Boolean {
-        TODO("Not yet implemented")
+        var res = false
+        HibernateManager.transaction {
+            val usuario = findById(id)
+            if (usuario != null) {
+                manager.remove(usuario)
+                res = true
+            }
+        }
+        return res
     }
 }
