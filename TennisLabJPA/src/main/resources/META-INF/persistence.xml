@@ -16,7 +16,7 @@
 
 
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:h2:mem:TenisLab;DB_CLOSE_DELAY=-1;"/>
+            <property name="hibernate.connection.url" value="jdbc:h2:mem:TennisLab;DB_CLOSE_DELAY=-1;"/>
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
             <property name="hibernate.connection.user" value=""/>
             <property name="hibernate.connection.password" value=""/>
