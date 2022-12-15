@@ -1,3 +1,8 @@
+/**
+ * @author Daniel Rodriguez
+ * @author Jorge Sánchez
+ * @author Alfredo Maldonado
+ */
 package models
 import org.hibernate.annotations.Type
 import java.time.LocalDateTime
@@ -14,9 +19,7 @@ data class Turno(
     @Column(name = "uuid")
     @Type(type = "uuid-char")
     val uuid: UUID,
-    @Type(type = "org.hibernate.type.LocalDateTimeType")
     val fechaInicio: LocalDateTime,
-    @Type(type = "org.hibernate.type.LocalDateTimeType")
     val fechaFinal: LocalDateTime,
     @OneToOne
     @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = false)

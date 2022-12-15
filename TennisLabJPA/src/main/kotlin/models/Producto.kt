@@ -1,3 +1,8 @@
+/**
+ * @author Daniel Rodriguez
+ * @author Jorge Sánchez
+ * @author Alfredo Maldonado
+ */
 package models
 
 import models.enums.TipoProducto
