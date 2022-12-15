@@ -1,3 +1,8 @@
+/**
+ * @author Daniel Rodriguez
+ * @author Jorge Sánchez
+ * @author Alfredo Maldonado
+ */
 package services
 
 import com.google.common.hash.Hashing
