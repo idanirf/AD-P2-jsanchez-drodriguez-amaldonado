@@ -1,3 +1,8 @@
+/**
+ * @author Daniel Rodriguez
+ * @author Jorge Sánchez
+ * @author Alfredo Maldonado
+ */
 package repositories.producto
 
 import db.HibernateManager

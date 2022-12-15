@@ -1,3 +1,8 @@
+/**
+ * @author Daniel Rodriguez
+ * @author Jorge Sánchez
+ * @author Alfredo Maldonado
+ */
 package models
 
 import kotlinx.serialization.Serializable
@@ -17,8 +22,8 @@ data class Usuario(
     val uuid: UUID,
     val nombre: String,
     val apellido: String,
-    val email: String,
-    val contraseña: String,
-    val perfil: TipoUsuario,
+    val correo: String,
+    val password: String,
+    val tipoUsuario: TipoUsuario,
 )
 
