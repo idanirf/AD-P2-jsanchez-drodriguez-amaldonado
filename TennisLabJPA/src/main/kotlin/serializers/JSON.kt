@@ -1,4 +1,9 @@
-package services
+/**
+ * @author Daniel Rodriguez
+ * @author Jorge Sánchez
+ * @author Alfredo Maldonado
+ */
+package serializers
 
 import dto.PedidoDTO
 import dto.ProductoDTO
