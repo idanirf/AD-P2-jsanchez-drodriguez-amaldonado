@@ -70,15 +70,15 @@ internal class UsuarioRepositoryImplementTest {
             { assertEquals(res.tipoUsuario, usuario.tipoUsuario) }
         )
     }
-/*    @Test
+    @Test
     fun delete(){
         usuarioRepositoryImplement.save(usuario)
-        val res = usuarioRepositoryImplement.delete(usuario)
+        val res = usuarioRepositoryImplement.delete(usuario.id)
         assert(res)
     }
     @Test
     fun deleteNoExiste(){
-        val res = usuarioRepositoryImplement.delete(usuario)
+        val res = usuarioRepositoryImplement.delete(usuario.id)
         assert(!res)
-    }*/
+    }
 }

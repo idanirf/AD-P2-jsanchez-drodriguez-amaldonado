@@ -98,21 +98,21 @@ internal class PedidoRepositoryImplementTest {
         )
     }
 
-    /*@Test
+    @Test
     fun delete() {
         usuarioRepositoryImplement.save(usuario)
         pedidoRepository.save(pedido)
 
-        val res = pedidoRepository.delete(pedido)
+        val res = pedidoRepository.delete(pedido.id)
 
         assert(res)
     }
 
     @Test
     fun deleteNoExiste() {
-        val res = pedidoRepository.delete(pedido)
+        val res = pedidoRepository.delete(pedido.id)
 
         assert(!res)
-    }*/
+    }
 
 }
