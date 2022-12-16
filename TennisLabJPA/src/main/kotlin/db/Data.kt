@@ -12,7 +12,7 @@ fun getUsuariosInit() = listOf(
         uuid = UUID.randomUUID(),
         nombre = "Alfonso",
         apellido = "Cabello",
-        correo = "marisa@cabello.com",
+        correo = "alfonso@cabello.com",
         password = "1234",
         tipoUsuario = TipoUsuario.USUARIO
     ),
@@ -21,7 +21,7 @@ fun getUsuariosInit() = listOf(
         uuid = UUID.randomUUID(),
         nombre = "Marcelo",
         apellido = "Alvarez",
-        correo = "piltrafa@barru.com",
+        correo = "marcelo@alvarez.com",
         password = "1234",
         tipoUsuario = TipoUsuario.ADMINISTRADOR
     ),
@@ -30,7 +30,7 @@ fun getUsuariosInit() = listOf(
         uuid = UUID.randomUUID(),
         nombre = "Fernando",
         apellido = "Alonso",
-        correo = "aldeao@martin.com",
+        correo = "fernado@alonso.com",
         password = "1234",
         tipoUsuario = TipoUsuario.ENCORDADOR
     ),
@@ -48,7 +48,7 @@ fun getUsuariosInit() = listOf(
         uuid = UUID.randomUUID(),
         nombre = "Rafael",
         apellido = "Nadal",
-        correo = "marisa@cabello.com",
+        correo = "rafael@nadal.com",
         password = "1234",
         tipoUsuario = TipoUsuario.ADMINISTRADOR
     )
