@@ -167,9 +167,9 @@ fun getTareasEncoradadoInit() = listOf(
         uuid = UUID.randomUUID(),
         precio = 100.50,
         tensionVertical = 22.50,
-        cordajeVertical = "Luxilon",
+        cordajeVertical = "Babolat",
         tensionHorizontal = 26.10,
-        cordajeHorizontal = "Luxilon",
+        cordajeHorizontal = "Babolat",
         nudos = NumeroNudos.DOS,
         pedido = getPedidosInit()[0],
     ),
@@ -220,7 +220,7 @@ fun getMaquinasEncordar() = listOf(
     MaquinaEncordar(
         id = 0,
         uuid = UUID.randomUUID(),
-        marca = "Vevor",
+        marca = "HEAD",
         modelo = "2020",
         fechaAdquisicion = LocalDate.of(2022, 3, 5),
         numeroSerie = 20,
@@ -230,9 +230,9 @@ fun getMaquinasEncordar() = listOf(
         turno = getTurnoInit()[0]
     ),
     MaquinaEncordar(
-        id = 0,
+        id = 1,
         uuid = UUID.randomUUID(),
-        marca = "Vevor",
+        marca = "HEAD",
         modelo = "2020",
         fechaAdquisicion = LocalDate.of(2022, 5, 5),
         numeroSerie = 20,
@@ -247,7 +247,7 @@ fun getMaquinasPersonalizar() = listOf(
     MaquinaPersonalizar(
         id = 0,
         uuid = UUID.randomUUID(),
-        marca = "Industrial",
+        marca = "Signum Pro",
         modelo = "30",
         fechaAdquisicion = LocalDate.of(2022, 4, 15),
         numeroSerie = 7,
@@ -257,9 +257,9 @@ fun getMaquinasPersonalizar() = listOf(
         turno = getTurnoInit()[0],
     ),
     MaquinaPersonalizar(
-        id = 0,
+        id = 1,
         uuid = UUID.randomUUID(),
-        marca = "Gamma",
+        marca = "Solinco",
         modelo = "50",
         fechaAdquisicion = LocalDate.of(2022, 5, 15),
         numeroSerie = 9,
@@ -292,5 +292,4 @@ fun getTurnoInit() = listOf(
         fechaFinal = LocalDateTime.of(2022, 8, 20, 10, 20),
         usuario = getUsuariosInit()[2]
     ),
-
-    )
+)
