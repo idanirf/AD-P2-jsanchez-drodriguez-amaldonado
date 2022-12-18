@@ -35,12 +35,12 @@ class TareaPersonalizacionRepository : ITareaPersonalizacionRepository {
         return entity
     }
 
-    override fun delete(id: Int): Boolean {
+    override fun delete(entity: TareaPersonalizacion): Boolean {
         var res = false
         HibernateManager.transaction {
-            val tarea = findById(id)
+            val tarea = manager.find(TareaPersonalizacion::class.java, entity.id)
             if(tarea != null){
-                manager.remove(tarea)
+                manager.remove(entity.id)
                 res = true
             }
         }

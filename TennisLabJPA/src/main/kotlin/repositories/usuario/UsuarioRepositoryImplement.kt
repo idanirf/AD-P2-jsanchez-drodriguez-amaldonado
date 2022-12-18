@@ -37,12 +37,12 @@ class UsuarioRepositoryImplement: IUsuarioRepository {
         return entity
     }
 
-    override fun delete(id: Int): Boolean {
+    override fun delete(entity: Usuario): Boolean {
         var res = false
         HibernateManager.transaction {
-            val usuario = findById(id)
+            val usuario = manager.find(Usuario::class.java, entity.id)
             if (usuario != null) {
-                manager.remove(usuario)
+                manager.remove(entity.id)
                 res = true
             }
         }
