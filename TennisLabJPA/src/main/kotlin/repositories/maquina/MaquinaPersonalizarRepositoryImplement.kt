@@ -34,12 +34,12 @@ class MaquinaPersonalizarRepositoryImplement : IMaquinaPersonalizarRepository {
         return entity
     }
 
-    override fun delete(id: Int): Boolean {
+    override fun delete(entity: MaquinaPersonalizar): Boolean {
         var res = false
         HibernateManager.transaction {
-            val maquina = findById(id)
+            val maquina = manager.find(MaquinaPersonalizar::class.java, entity.id)
             if (maquina != null) {
-                manager.remove(maquina)
+                manager.remove(entity.id)
                 res = true
             }
         }
