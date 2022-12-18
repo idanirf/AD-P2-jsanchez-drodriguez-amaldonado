@@ -7,7 +7,8 @@ import mu.KotlinLogging
 import javax.persistence.TypedQuery
 
 private val logger = KotlinLogging.logger {}
-class PedidoRepositoryImplement : iPedidoRepository {
+
+class PedidoRepositoryImplement : IPedidoRepository {
     override fun findAll(): List<Pedido> {
         logger.debug { "findAll()" }
         var pedidos = mutableListOf<Pedido>()
@@ -38,7 +39,7 @@ class PedidoRepositoryImplement : iPedidoRepository {
         var res = false
         HibernateManager.transaction {
             val pedido = manager.find(Pedido::class.java, entity.id)
-            if (pedido != null){
+            if (pedido != null) {
                 manager.remove(entity.id)
                 res = true
             }
