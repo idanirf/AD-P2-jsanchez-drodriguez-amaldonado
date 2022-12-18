@@ -8,6 +8,7 @@ package repositories.producto
 import db.HibernateManager
 import db.HibernateManager.manager
 import models.Producto
+import java.nio.file.Files.find
 import javax.persistence.TypedQuery
 
 class ProductoRepositoryImplement: IProductoRepository {
@@ -35,12 +36,12 @@ class ProductoRepositoryImplement: IProductoRepository {
         return entity
     }
 
-    override fun delete(id: Int): Boolean {
+    override fun delete(entity: Producto): Boolean {
         var res = false
         HibernateManager.transaction {
-            val producto = findById(id)
+            val producto = manager.find(Producto::class.java, entity.id)
             if (producto != null) {
-                manager.remove(producto)
+                manager.remove(entity.id)
                 res = true
             }
         }

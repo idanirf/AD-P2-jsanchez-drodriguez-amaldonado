@@ -37,12 +37,12 @@ class MaquinaEncordarRepositoryImplement : IMaquinaEncordarRepository {
         return entity
     }
 
-    override fun delete(id: Int): Boolean {
+    override fun delete(entity: MaquinaEncordar): Boolean {
         var res = false
         HibernateManager.transaction {
-            val maquina = findById(id)
+            val maquina = manager.find(MaquinaEncordar::class.java, entity.id)
             if (maquina != null) {
-                manager.remove(maquina)
+                manager.remove(entity.id)
                 res = true
             }
         }

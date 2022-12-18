@@ -35,12 +35,12 @@ class TurnoRepositoryImplement : ITurnoRepository {
         return entity
     }
 
-    override fun delete(id: Int): Boolean {
+    override fun delete(entity: Turno): Boolean {
         var result = false
         HibernateManager.transaction {
-            val turno = findById(id)
+            val turno = manager.find(Turno::class.java, entity.id)
             if (turno !=null){
-                manager.remove(turno)
+                manager.remove(entity.id)
                 result = true
             }
         }
