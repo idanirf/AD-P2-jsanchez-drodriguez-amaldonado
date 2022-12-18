@@ -37,12 +37,12 @@ class TareaEncordadoRepository : ITareaEncordadoRepository {
         return entity
     }
 
-    override fun delete(id: Int): Boolean {
+    override fun delete(entity: TareaEncordado): Boolean {
         var res = false
         HibernateManager.transaction {
-            val tarea = findById(id)
+            val tarea = manager.find(TareaEncordado::class.java, entity.id)
             if (tarea != null) {
-                manager.remove(tarea)
+                manager.remove(entity.id)
                 res = true
             }
         }
