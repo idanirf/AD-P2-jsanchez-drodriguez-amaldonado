@@ -34,12 +34,12 @@ class PedidoRepositoryImplement : iPedidoRepository {
         return entity
     }
 
-    override fun delete(id: Int): Boolean {
+    override fun delete(entity: Pedido): Boolean {
         var res = false
         HibernateManager.transaction {
-            val pedido = findById(id)
+            val pedido = manager.find(Pedido::class.java, entity.id)
             if (pedido != null){
-                manager.remove(pedido)
+                manager.remove(entity.id)
                 res = true
             }
         }

@@ -41,7 +41,7 @@ class ProductoRepositoryImplement: IProductoRepository {
         HibernateManager.transaction {
             val producto = manager.find(Producto::class.java, entity.id)
             if (producto != null) {
-                manager.remove(producto)
+                manager.remove(entity.id)
                 res = true
             }
         }
