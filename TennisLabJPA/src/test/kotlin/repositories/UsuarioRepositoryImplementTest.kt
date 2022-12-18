@@ -73,12 +73,12 @@ internal class UsuarioRepositoryImplementTest {
     @Test
     fun delete(){
         usuarioRepositoryImplement.save(usuario)
-        val res = usuarioRepositoryImplement.delete(usuario.id)
+        val res = usuarioRepositoryImplement.delete(usuario)
         assert(res)
     }
     @Test
     fun deleteNoExiste(){
-        val res = usuarioRepositoryImplement.delete(usuario.id)
+        val res = usuarioRepositoryImplement.delete(usuario)
         assert(!res)
     }
 }

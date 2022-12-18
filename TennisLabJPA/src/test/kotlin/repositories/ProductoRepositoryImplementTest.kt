@@ -111,13 +111,13 @@ class ProductoRepositoryImplementTest {
     @Test
     fun delete(){
         productoRepository.save(producto)
-        val res = productoRepository.delete(producto.id)
+        val res = productoRepository.delete(producto)
 
         assert(res)
     }
     @Test
     fun deleteNoExiste(){
-        val res = productoRepository.delete(producto.id)
+        val res = productoRepository.delete(producto)
 
         assert(!res)
     }
