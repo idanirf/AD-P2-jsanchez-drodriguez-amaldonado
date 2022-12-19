@@ -83,14 +83,14 @@ internal class TurnoRepositoryImplementTest{
         usuarioRepositoryImplement.save(usuario)
         turnoRepositoryImplement.save(turno)
 
-        val res = turnoRepositoryImplement.delete(turno.id)
+        val res = turnoRepositoryImplement.delete(turno)
 
         assert(res)
     }
 
     @Test
     fun deleteNoExiste() {
-        val res = turnoRepositoryImplement.delete(turno.id)
+        val res = turnoRepositoryImplement.delete(turno)
 
         assert(!res)
     }
