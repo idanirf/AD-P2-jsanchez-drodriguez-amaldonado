@@ -4,12 +4,12 @@ import models.TareaEncordado
 import models.TareaPersonalizacion
 import repositories.tareas.ITareaEncordadoRepository
 import repositories.tareas.ITareaPersonalizacionRepository
-import repositories.tareas.TareaEncordadoRepository
-import repositories.tareas.TareaPersonalizacionRepository
+import repositories.tareas.TareaEncordadoRepositoryImplement
+import repositories.tareas.TareaPersonalizacionRepositoryImplement
 
 class TareaController(
-    private val tareaEncordadoRepository: ITareaEncordadoRepository = TareaEncordadoRepository(),
-    private val tareaPersonalizacionRepository: ITareaPersonalizacionRepository = TareaPersonalizacionRepository()
+    private val tareaEncordadoRepository: ITareaEncordadoRepository = TareaEncordadoRepositoryImplement(),
+    private val tareaPersonalizacionRepository: ITareaPersonalizacionRepository = TareaPersonalizacionRepositoryImplement()
 ) {
     fun findAllTareaPersonalizacion(): List<TareaPersonalizacion> {
         return tareaPersonalizacionRepository.findAll()

@@ -7,7 +7,7 @@ import mu.KotlinLogging
 import javax.persistence.TypedQuery
 
 private val logger = KotlinLogging.logger {}
-class TareaPersonalizacionRepository : ITareaPersonalizacionRepository {
+class TareaPersonalizacionRepositoryImplement : ITareaPersonalizacionRepository {
     override fun findAll(): List<TareaPersonalizacion> {
         logger.debug { "findAll()" }
         var tareas = mutableListOf<TareaPersonalizacion>()

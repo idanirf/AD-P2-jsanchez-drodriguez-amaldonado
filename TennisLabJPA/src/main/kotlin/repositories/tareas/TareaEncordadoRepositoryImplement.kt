@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery
 
 private val logger = KotlinLogging.logger {}
 
-class TareaEncordadoRepository : ITareaEncordadoRepository {
+class TareaEncordadoRepositoryImplement : ITareaEncordadoRepository {
     override fun findAll(): List<TareaEncordado> {
         logger.debug { "findAll()" }
         var tareas = mutableListOf<TareaEncordado>()
