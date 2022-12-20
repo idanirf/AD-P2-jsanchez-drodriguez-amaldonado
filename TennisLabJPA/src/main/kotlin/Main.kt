@@ -1,11 +1,10 @@
 import controller.*
 import db.*
-import dto.toDTO
-import models.enums.TipoEstado
 import mu.KotlinLogging
 import serializers.JSON
 import utils.ApplicationProperties
 import utils.logger
+
 val logger = KotlinLogging.logger {}
 fun main(){
     println("\uD83C\uDFBE TennisLab \uD83C\uDFBE")
