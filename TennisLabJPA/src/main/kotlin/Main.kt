@@ -1,5 +1,7 @@
 import controller.*
 import db.*
+import dto.toDTO
+import models.enums.TipoEstado
 import mu.KotlinLogging
 import serializers.JSON
 import utils.ApplicationProperties
@@ -26,25 +28,25 @@ fun main(){
     getMaquinasEncordar().forEach { maquina -> maquinaController.saveMaquinaEncordar(maquina) }
     getMaquinasPersonalizar().forEach { maquina -> maquinaController.saveMaquinaPersonalizar(maquina) }
 
-    /*val pedido = pedidoController.findById(2)?.toDTO()
-    serviceJSON.pedidoJSON("", listOf(pedido!!))
+    val pedido = pedidoController.findById(2)?.toDTO()
+    serviceJSON.pedidoJSON(listOf(pedido!!))
 
     val pedidosPendientes = pedidoController
         .findAll()
         .filter { it.estado == TipoEstado.EN_PROCESO }
         .map { it.toDTO() }
-    serviceJSON.pedidoJSON("PedidosPendientes", pedidosPendientes)
+    serviceJSON.pedidoJSON(pedidosPendientes)
 
     val productos = productoController
         .findAll()
         .map { it.toDTO() }
-    serviceJSON.productoJSON("productos", productos)
+    serviceJSON.productoJSON( productos)
 
     val asignacion = turnoController
         .findAll()
         .sortedBy { it.fechaInicio }
         .map { it.toDTO() }
-    serviceJSON.turnoJSON("", asignacion)*/
+    serviceJSON.turnoJSON(asignacion)
 
 }
 
