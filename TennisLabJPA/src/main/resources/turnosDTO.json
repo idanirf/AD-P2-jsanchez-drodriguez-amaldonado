@@ -1,0 +1,23 @@
+[
+    {
+        "id": 2,
+        "uuid": "d25ff778-7fbf-4585-b6eb-dba10bb5a072",
+        "fechaInicio": "2022-07-14T09:10",
+        "fechaFinal": "2022-08-20T10:20",
+        "usuario": "Usuario(id=2, uuid=f4cb02c0-71ef-4dcb-942f-cb9145360076, nombre=Fernando, apellido=Alonso, correo=fernado@alonso.com, password=1234, tipoUsuario=ENCORDADOR)"
+    },
+    {
+        "id": 1,
+        "uuid": "3e6ba05e-7f9a-45d7-8931-fef8c4537c90",
+        "fechaInicio": "2022-08-14T09:10",
+        "fechaFinal": "2022-09-20T10:20",
+        "usuario": "Usuario(id=1, uuid=9b4160b5-66c6-4567-b401-59eaef4002be, nombre=Marcelo, apellido=Alvarez, correo=marcelo@alvarez.com, password=1234, tipoUsuario=ADMINISTRADOR)"
+    },
+    {
+        "id": 0,
+        "uuid": "5a950c52-9ee0-466f-baf5-bd465a8bccd6",
+        "fechaInicio": "2022-10-14T09:10",
+        "fechaFinal": "2022-11-20T10:20",
+        "usuario": "Usuario(id=0, uuid=c4e72bdb-2eaa-46a8-ad8c-2d6d498daf8a, nombre=Alfonso, apellido=Cabello, correo=alfonso@cabello.com, password=1234, tipoUsuario=USUARIO)"
+    }
+]

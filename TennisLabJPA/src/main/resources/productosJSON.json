@@ -1,0 +1,52 @@
+[
+    {
+        "id": 0,
+        "uuid": "fb1353a9-815c-429a-95c4-3d6c8b318c2c",
+        "marca": "Nike",
+        "modelo": "H10",
+        "precio": 50.45,
+        "stock": 120,
+        "pedido": "Pedido(id=0, uuid=56df6ef9-39ea-4b3c-a6f5-8e22db594f73, estado=TERMINADO, fechaEntrada=2022-03-15, fechaSalidaProgramada=2022-05-10, fechaEntrega=2022-06-07, precio=10.2, usuario=Usuario(id=0, uuid=c4e72bdb-2eaa-46a8-ad8c-2d6d498daf8a, nombre=Alfonso, apellido=Cabello, correo=alfonso@cabello.com, password=1234, tipoUsuario=USUARIO))",
+        "tipoProducto": "CORDAJE"
+    },
+    {
+        "id": 1,
+        "uuid": "9886ab5e-ec2c-43de-a8dd-5f8bc001d919",
+        "marca": "Nike",
+        "modelo": "H10",
+        "precio": 50.45,
+        "stock": 120,
+        "pedido": "Pedido(id=1, uuid=8d484775-c109-4a58-b16d-640f09ecb43f, estado=TERMINADO, fechaEntrada=2022-02-15, fechaSalidaProgramada=2022-06-10, fechaEntrega=2022-07-10, precio=10.2, usuario=Usuario(id=1, uuid=9b4160b5-66c6-4567-b401-59eaef4002be, nombre=Marcelo, apellido=Alvarez, correo=marcelo@alvarez.com, password=1234, tipoUsuario=ADMINISTRADOR))",
+        "tipoProducto": "CORDAJE"
+    },
+    {
+        "id": 2,
+        "uuid": "3044f160-bb8a-4dca-8953-e3663c825721",
+        "marca": "Nike",
+        "modelo": "H10",
+        "precio": 50.45,
+        "stock": 120,
+        "pedido": "Pedido(id=2, uuid=1eebd6cb-f1a5-4475-8027-6103b1dca663, estado=TERMINADO, fechaEntrada=2022-04-15, fechaSalidaProgramada=2022-09-10, fechaEntrega=2022-10-10, precio=10.2, usuario=Usuario(id=2, uuid=f4cb02c0-71ef-4dcb-942f-cb9145360076, nombre=Fernando, apellido=Alonso, correo=fernado@alonso.com, password=1234, tipoUsuario=ENCORDADOR))",
+        "tipoProducto": "CORDAJE"
+    },
+    {
+        "id": 3,
+        "uuid": "ef2cb0aa-bd26-42e4-9d21-d8711eafbaf6",
+        "marca": "Nike",
+        "modelo": "H10",
+        "precio": 50.45,
+        "stock": 120,
+        "pedido": "Pedido(id=3, uuid=c2f6bedd-7a76-4aff-a436-8140ca707561, estado=TERMINADO, fechaEntrada=2022-06-15, fechaSalidaProgramada=2022-06-20, fechaEntrega=2022-07-10, precio=10.2, usuario=Usuario(id=3, uuid=0134ff19-5500-43e2-a92c-a8965be4f476, nombre=Cristiano, apellido=Ronaldo, correo=cristiano@ronaldo.com, password=1234, tipoUsuario=USUARIO))",
+        "tipoProducto": "CORDAJE"
+    },
+    {
+        "id": 4,
+        "uuid": "adb959a4-699a-4766-8a8a-9e4c56110ea8",
+        "marca": "Nike",
+        "modelo": "H10",
+        "precio": 50.45,
+        "stock": 120,
+        "pedido": "Pedido(id=4, uuid=d6453a44-6708-440c-bdc0-f8062ac2bb2f, estado=TERMINADO, fechaEntrada=2022-06-15, fechaSalidaProgramada=2022-07-10, fechaEntrega=2022-08-10, precio=10.2, usuario=Usuario(id=4, uuid=2ef53bc7-0f32-445c-90f0-620b0650199b, nombre=Rafael, apellido=Nadal, correo=rafael@nadal.com, password=1234, tipoUsuario=ADMINISTRADOR))",
+        "tipoProducto": "CORDAJE"
+    }
+]
