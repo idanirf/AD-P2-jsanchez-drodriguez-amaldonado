@@ -13,7 +13,7 @@ import javax.persistence.*
 @Table(name = "MaquinaPersonalizar")
 @NamedQuery(name = "MaquinaPersonalizar.findAll", query = "SELECT t FROM MaquinaPersonalizar t")
 data class MaquinaPersonalizar(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     val id : Int,
     @Column(name = "uuid")
     @Type(type = "uuid-char")

@@ -14,7 +14,7 @@ import javax.persistence.*
 @Table(name = "Turnos")
 @NamedQuery(name = "Turnos.findAll", query = "SELECT t FROM Turno t")
 data class Turno(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     val id: Int,
     @Column(name = "uuid")
     @Type(type = "uuid-char")

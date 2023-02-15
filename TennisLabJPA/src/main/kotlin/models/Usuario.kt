@@ -15,7 +15,7 @@ import javax.persistence.*
 @Table(name = "Usuario")
 @NamedQuery(name = "Usuario.findAll", query = "SELECT t FROM Usuario t")
 data class Usuario(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     val id:Int,
     @Column(name="UUID_Usuario")
     @Type(type = "uuid-char")

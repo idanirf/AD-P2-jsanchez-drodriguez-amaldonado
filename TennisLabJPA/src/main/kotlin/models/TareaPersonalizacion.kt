@@ -13,7 +13,7 @@ import javax.persistence.*
 @Table(name = "TareaPersonalizacion")
 @NamedQuery(name = "TareaPersonalizacion.findAll", query = "SELECT t FROM TareaPersonalizacion t")
 data class TareaPersonalizacion(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     val id: Int,
     @Column(name = "uuid")
     @Type(type = "uuid-char")
