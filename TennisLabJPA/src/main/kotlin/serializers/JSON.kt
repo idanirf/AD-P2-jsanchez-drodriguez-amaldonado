@@ -43,5 +43,4 @@ class JSON {
         val json = Json { prettyPrint = true }
         fichero.writeText(json.encodeToString(productoDTO))
     }
-
 }

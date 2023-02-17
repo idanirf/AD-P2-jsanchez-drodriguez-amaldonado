@@ -9,7 +9,6 @@ import utils.logger
 
 val logger = KotlinLogging.logger {}
 fun main(){
-    println("\uD83C\uDFBE TennisLab \uD83C\uDFBE")
     initDatabase()
     val maquinaController=MaquinaController()
     val pedidoController=PedidoController()
@@ -47,9 +46,7 @@ fun main(){
         .sortedBy { it.fechaInicio }
         .map { it.toDTO() }
     serviceJSON.turnoJSON(asignacion)
-
 }
-
 
 fun initDatabase() {
     val properties = ApplicationProperties()
