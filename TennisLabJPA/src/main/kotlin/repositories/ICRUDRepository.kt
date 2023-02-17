@@ -5,6 +5,4 @@ interface ICRUDRepository<T,ID> {
     fun findById(id: ID): T?
     fun save(entity: T): T
     fun delete(entity: T): Boolean
-
-    //fun update(entity: T): T //TODO vemos si es necesario que este aquí
 }
