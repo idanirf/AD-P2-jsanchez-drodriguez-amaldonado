@@ -2,21 +2,21 @@ package repositories
 
 import db.HibernateManager
 import models.Pedido
-import models.Producto
+import models.TareaPersonalizacion
 import models.Usuario
 import models.enums.TipoEstado
-import models.enums.TipoProducto
 import models.enums.TipoUsuario
 import org.junit.jupiter.api.*
 import repositories.pedido.PedidoRepositoryImplement
-import repositories.producto.ProductoRepositoryImplement
+import repositories.tareas.TareaPersonalizacionRepositoryImplement
 import repositories.usuario.UsuarioRepositoryImplement
 import java.time.LocalDate
 import java.util.*
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class ProductoRepositoryImplementTest {
-    private val productoRepositoryImplement = ProductoRepositoryImplement()
+class TareaPersonalizacionRepositoryImplementTest {
+
+    private val tareaPersonalizacionRepositoryImplement = TareaPersonalizacionRepositoryImplement()
     private val usuarioRepositoryImplement = UsuarioRepositoryImplement()
     private val pedidoRepositoryImplement = PedidoRepositoryImplement()
 
@@ -29,31 +29,32 @@ class ProductoRepositoryImplementTest {
         password = "1234",
         tipoUsuario = TipoUsuario.USUARIO
     )
+
     private val pedido = Pedido(
         id = 2,
         uuid = UUID.randomUUID(),
-        estado = TipoEstado.TERMINADO,
+        estado = TipoEstado.RECIBIDO,
         fechaEntrada = LocalDate.of(2022, 4, 15),
         fechaSalidaProgramada = LocalDate.of(2022, 9, 10),
         fechaEntrega = LocalDate.of(2022, 10, 10),
         precio = 10.20,
         usuario = usuario
     )
-    private val producto = Producto(
+
+    private val tarea = TareaPersonalizacion(
         id = 0,
         uuid = UUID.randomUUID(),
-        marca = "Nike",
-        modelo = "H10",
-        precio = 50.45,
-        stock = 120,
-        tipoProducto = TipoProducto.CORDAJE,
+        rigidez = 69.69,
+        peso = 0.20,
+        balance = 327.10,
+        precio = 99.99,
         pedido = pedido
     )
 
     @AfterEach
     fun tearDown() {
         HibernateManager.transaction {
-            val query = HibernateManager.manager.createNativeQuery("DELETE FROM Producto")
+            val query = HibernateManager.manager.createNativeQuery("DELETE FROM TareaPersonalizacion")
             query.executeUpdate()
         }
     }
@@ -61,9 +62,10 @@ class ProductoRepositoryImplementTest {
     @BeforeEach
     fun beforeEach() {
         HibernateManager.transaction {
-            val query = HibernateManager.manager.createNativeQuery("DELETE FROM Producto")
+            val query = HibernateManager.manager.createNativeQuery("DELETE FROM TareaPersonalizacion")
             query.executeUpdate()
         }
+
     }
 
     @BeforeAll
@@ -74,51 +76,49 @@ class ProductoRepositoryImplementTest {
 
     @Test
     fun findAll() {
-        val res = productoRepositoryImplement.findAll()
+        val res = tareaPersonalizacionRepositoryImplement.findAll()
         assert(res.isEmpty())
     }
 
     @Test
     fun findById() {
-        productoRepositoryImplement.save(producto)
-        val res = productoRepositoryImplement.findById(producto.id)
-
-        assert(res == producto)
+        tareaPersonalizacionRepositoryImplement.save(tarea)
+        val res = tareaPersonalizacionRepositoryImplement.findById(tarea.id)
+        assert(res == tarea)
     }
 
     @Test
     fun findByIdNoExiste() {
-        val res = productoRepositoryImplement.findById(-5)
-
+        val res = tareaPersonalizacionRepositoryImplement.findById(-5)
         assert(res == null)
+
     }
 
     @Test
     fun saveInsert() {
-        val res = productoRepositoryImplement.save(producto)
+        val res = tareaPersonalizacionRepositoryImplement.save(tarea)
 
         assertAll(
-            { Assertions.assertEquals(res.id, producto.id) },
-            { Assertions.assertEquals(res.uuid, producto.uuid) },
-            { Assertions.assertEquals(res.marca, producto.marca) },
-            { Assertions.assertEquals(res.modelo, producto.modelo) },
-            { Assertions.assertEquals(res.precio, producto.precio) },
-            { Assertions.assertEquals(res.stock, producto.stock) },
-            { Assertions.assertEquals(res.tipoProducto, producto.tipoProducto) },
-            { Assertions.assertEquals(res.pedido, producto.pedido) },
-        )
-    }
-    @Test
-    fun delete(){
-        productoRepositoryImplement.save(producto)
-        val res = productoRepositoryImplement.delete(producto)
+            { Assertions.assertEquals(res.id, tarea.id) },
+            { Assertions.assertEquals(res.uuid, tarea.uuid) },
+            { Assertions.assertEquals(res.rigidez, tarea.rigidez) },
+            { Assertions.assertEquals(res.peso, tarea.peso) },
+            { Assertions.assertEquals(res.balance, tarea.balance) },
+            { Assertions.assertEquals(res.precio, tarea.precio) },
 
+            )
+    }
+
+    @Test
+    fun delete() {
+        tareaPersonalizacionRepositoryImplement.save(tarea)
+        val res = tareaPersonalizacionRepositoryImplement.delete(tarea)
         assert(res)
     }
-    @Test
-    fun deleteNoExiste(){
-        val res = productoRepositoryImplement.delete(producto)
 
+    @Test
+    fun deleteNoExiste() {
+        val res = tareaPersonalizacionRepositoryImplement.delete(tarea)
         assert(!res)
     }
 }

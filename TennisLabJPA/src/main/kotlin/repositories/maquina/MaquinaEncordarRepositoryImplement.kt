@@ -41,8 +41,8 @@ class MaquinaEncordarRepositoryImplement : IMaquinaEncordarRepository {
         var res = false
         HibernateManager.transaction {
             val maquina = manager.find(MaquinaEncordar::class.java, entity.id)
-            if (maquina != null) {
-                manager.remove(entity.id)
+            maquina?.let {
+                manager.remove(it)
                 res = true
             }
         }

@@ -38,8 +38,8 @@ class MaquinaPersonalizarRepositoryImplement : IMaquinaPersonalizarRepository {
         var res = false
         HibernateManager.transaction {
             val maquina = manager.find(MaquinaPersonalizar::class.java, entity.id)
-            if (maquina != null) {
-                manager.remove(entity.id)
+            maquina?.let {
+                manager.remove(it)
                 res = true
             }
         }

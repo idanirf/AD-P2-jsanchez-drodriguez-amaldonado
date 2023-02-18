@@ -40,8 +40,8 @@ class UsuarioRepositoryImplement: IUsuarioRepository {
         var res = false
         HibernateManager.transaction {
             val usuario = manager.find(Usuario::class.java, entity.id)
-            if (usuario != null) {
-                manager.remove(entity.id)
+            usuario?.let {
+                manager.remove(it)
                 res = true
             }
         }

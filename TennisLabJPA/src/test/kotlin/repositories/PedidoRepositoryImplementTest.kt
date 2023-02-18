@@ -17,7 +17,7 @@ import org.junit.jupiter.api.*
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 internal class PedidoRepositoryImplementTest {
-    private val pedidoRepository: PedidoRepositoryImplement = PedidoRepositoryImplement()
+    private val pedidoRepositoryImplement: PedidoRepositoryImplement = PedidoRepositoryImplement()
     private val usuarioRepositoryImplement: UsuarioRepositoryImplement = UsuarioRepositoryImplement()
 
     private val usuario = Usuario(
@@ -60,23 +60,23 @@ internal class PedidoRepositoryImplementTest {
 
     @Test
     fun findAll() {
-        val res = pedidoRepository.findAll()
+        val res = pedidoRepositoryImplement.findAll()
 
         assert(res.isEmpty())
     }
 
     @Test
     fun findById() {
-        pedidoRepository.save(pedido)
+        pedidoRepositoryImplement.save(pedido)
 
-        val res = pedidoRepository.findById(pedido.id)
+        val res = pedidoRepositoryImplement.findById(pedido.id)
 
         assert(res == pedido)
     }
 
     @Test
     fun findByIdNoExiste() {
-        val res = pedidoRepository.findById(-5)
+        val res = pedidoRepositoryImplement.findById(-5)
 
         assert(res == null)
 
@@ -85,7 +85,7 @@ internal class PedidoRepositoryImplementTest {
     @Test
     fun saveInsert() {
         usuarioRepositoryImplement.save(usuario)
-        val res = pedidoRepository.save(pedido)
+        val res = pedidoRepositoryImplement.save(pedido)
 
         assertAll(
             { Assertions.assertEquals(res.id, pedido.id) },
@@ -101,16 +101,16 @@ internal class PedidoRepositoryImplementTest {
     @Test
     fun delete() {
         usuarioRepositoryImplement.save(usuario)
-        pedidoRepository.save(pedido)
+        pedidoRepositoryImplement.save(pedido)
 
-        val res = pedidoRepository.delete(pedido)
+        val res = pedidoRepositoryImplement.delete(pedido)
 
         assert(res)
     }
 
     @Test
     fun deleteNoExiste() {
-        val res = pedidoRepository.delete(pedido)
+        val res = pedidoRepositoryImplement.delete(pedido)
 
         assert(!res)
     }

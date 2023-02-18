@@ -39,8 +39,8 @@ class PedidoRepositoryImplement : IPedidoRepository {
         var res = false
         HibernateManager.transaction {
             val pedido = manager.find(Pedido::class.java, entity.id)
-            if (pedido != null) {
-                manager.remove(entity.id)
+            pedido?.let {
+                manager.remove(it)
                 res = true
             }
         }

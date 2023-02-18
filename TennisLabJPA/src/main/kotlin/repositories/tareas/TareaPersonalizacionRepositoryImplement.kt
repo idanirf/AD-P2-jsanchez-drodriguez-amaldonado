@@ -39,8 +39,8 @@ class TareaPersonalizacionRepositoryImplement : ITareaPersonalizacionRepository 
         var res = false
         HibernateManager.transaction {
             val tarea = manager.find(TareaPersonalizacion::class.java, entity.id)
-            if(tarea != null){
-                manager.remove(entity.id)
+            tarea?.let {
+                manager.remove(it)
                 res = true
             }
         }

@@ -41,8 +41,8 @@ class TareaEncordadoRepositoryImplement : ITareaEncordadoRepository {
         var res = false
         HibernateManager.transaction {
             val tarea = manager.find(TareaEncordado::class.java, entity.id)
-            if (tarea != null) {
-                manager.remove(entity.id)
+            tarea?.let {
+                manager.remove(it)
                 res = true
             }
         }
