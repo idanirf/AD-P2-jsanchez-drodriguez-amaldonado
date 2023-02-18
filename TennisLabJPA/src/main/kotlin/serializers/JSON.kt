@@ -19,17 +19,35 @@ class JSON {
                 File.separator + "src" +
                 File.separator + "main" +
                 File.separator + "resources"
-        val fichero = File(directorio + File.separator + "turnosDTO.json")
+        val fichero = File(directorio + File.separator + "5_turnosDTO.json")
         val json = Json { prettyPrint = true }
         fichero.writeText(json.encodeToString(turnoDTO))
     }
 
-    fun pedidoJSON( pedidoDTO: List<PedidoDTO>) {
+    fun pedidoJSONCompletados(pedidoDTO: List<PedidoDTO>) {
         val directorio = System.getProperty("user.dir") +
                 File.separator + "src" +
                 File.separator + "main" +
                 File.separator + "resources"
-        val fichero = File(directorio + File.separator + "pedidosJSON.json")
+        val fichero = File(directorio + File.separator + "3_pedidosJSON.json")
+        val json = Json { prettyPrint = true }
+        fichero.writeText(json.encodeToString(pedidoDTO))
+    }
+    fun pedidoInfoJSON(pedidoDTO: List<PedidoDTO>) {
+        val directorio = System.getProperty("user.dir") +
+                File.separator + "src" +
+                File.separator + "main" +
+                File.separator + "resources"
+        val fichero = File(directorio + File.separator + "1_pedidoInfoJSON.json")
+        val json = Json { prettyPrint = true }
+        fichero.writeText(json.encodeToString(pedidoDTO))
+    }
+    fun pedidoPendienteJSON(pedidoDTO: List<PedidoDTO>) {
+        val directorio = System.getProperty("user.dir") +
+                File.separator + "src" +
+                File.separator + "main" +
+                File.separator + "resources"
+        val fichero = File(directorio + File.separator + "2_pedidoPendientesJSON.json")
         val json = Json { prettyPrint = true }
         fichero.writeText(json.encodeToString(pedidoDTO))
     }
@@ -39,7 +57,7 @@ class JSON {
                 File.separator + "src" +
                 File.separator + "main" +
                 File.separator + "resources"
-        val fichero = File(directorio + File.separator + "productosJSON.json")
+        val fichero = File(directorio + File.separator + "4_productosJSON.json")
         val json = Json { prettyPrint = true }
         fichero.writeText(json.encodeToString(productoDTO))
     }

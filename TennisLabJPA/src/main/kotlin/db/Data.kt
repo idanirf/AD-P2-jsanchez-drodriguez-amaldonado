@@ -121,7 +121,7 @@ fun getPedidosInit() = listOf(
     Pedido(
         id = 1,
         uuid = UUID.randomUUID(),
-        estado = TipoEstado.TERMINADO,
+        estado = TipoEstado.EN_PROCESO,
         fechaEntrada = LocalDate.of(2022, 2, 15),
         fechaSalidaProgramada = LocalDate.of(2022, 6, 10),
         fechaEntrega = LocalDate.of(2022, 7, 10),
@@ -132,7 +132,7 @@ fun getPedidosInit() = listOf(
     Pedido(
         id = 2,
         uuid = UUID.randomUUID(),
-        estado = TipoEstado.TERMINADO,
+        estado = TipoEstado.RECIBIDO,
         fechaEntrada = LocalDate.of(2022, 4, 15),
         fechaSalidaProgramada = LocalDate.of(2022, 9, 10),
         fechaEntrega = LocalDate.of(2022, 10, 10),
@@ -142,7 +142,7 @@ fun getPedidosInit() = listOf(
     Pedido(
         id = 3,
         uuid = UUID.randomUUID(),
-        estado = TipoEstado.TERMINADO,
+        estado = TipoEstado.EN_PROCESO,
         fechaEntrada = LocalDate.of(2022, 6, 15),
         fechaSalidaProgramada = LocalDate.of(2022, 6, 20),
         fechaEntrega = LocalDate.of(2022, 7, 10),

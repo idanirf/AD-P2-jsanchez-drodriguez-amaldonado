@@ -26,21 +26,29 @@ fun main(){
     getTareasPersonalizacion().forEach { tarea ->tareaController.saveTareaPersonalizacion(tarea) }
     getMaquinasEncordar().forEach { maquina -> maquinaController.saveMaquinaEncordar(maquina) }
     getMaquinasPersonalizar().forEach { maquina -> maquinaController.saveMaquinaPersonalizar(maquina) }
-
+//Información completa JSON pedido
     val pedido = pedidoController.findById(2)?.toDTO()
-    serviceJSON.pedidoJSON(listOf(pedido!!))
-
+    serviceJSON.pedidoInfoJSON(listOf(pedido!!))
+//Listado pedidos pendientes JSON
     val pedidosPendientes = pedidoController
         .findAll()
         .filter { it.estado == TipoEstado.EN_PROCESO }
         .map { it.toDTO() }
-    serviceJSON.pedidoJSON(pedidosPendientes)
+    serviceJSON.pedidoPendienteJSON(pedidosPendientes)
+    //Pedidos completados JSON
+    val pedidosCompletados = pedidoController
+        .findAll()
+        .stream()
+        .filter { it.estado == TipoEstado.TERMINADO }
+        .map { it.toDTO() }.toList()
+    serviceJSON.pedidoJSONCompletados(pedidosCompletados)
 
+//Listado de productos y servicios JSON
     val productos = productoController
         .findAll()
         .map { it.toDTO() }
     serviceJSON.productoJSON( productos)
-
+//Listado de asignaciones para los encordadores por fecha en JSON
     val asignacion = turnoController
         .findAll()
         .sortedBy { it.fechaInicio }
