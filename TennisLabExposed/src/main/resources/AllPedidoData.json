@@ -1,0 +1,12 @@
+[
+    {
+        "id": 2,
+        "uuid": "cf972feb-2035-45d1-a90f-56c2d8bf2f6d",
+        "estado": "TERMINADO",
+        "fechaEntrada": "2022-04-15",
+        "fechaSalidaProgramada": "2022-09-10",
+        "fechaEntrega": "2022-10-10",
+        "precio": 10.2,
+        "usuario": "Usuario(id=2, uuid=fb6cc475-5e60-4ab0-ba0b-97ea7a50e2b1, nombre=Fernando, apellido=Alonso, correo=fernado@alonso.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=ENCORDADOR)"
+    }
+]

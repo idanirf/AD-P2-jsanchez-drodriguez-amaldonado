@@ -1,0 +1,32 @@
+[
+    {
+        "id": 2,
+        "uuid": "cf972feb-2035-45d1-a90f-56c2d8bf2f6d",
+        "estado": "TERMINADO",
+        "fechaEntrada": "2022-04-15",
+        "fechaSalidaProgramada": "2022-09-10",
+        "fechaEntrega": "2022-10-10",
+        "precio": 10.2,
+        "usuario": "Usuario(id=2, uuid=fb6cc475-5e60-4ab0-ba0b-97ea7a50e2b1, nombre=Fernando, apellido=Alonso, correo=fernado@alonso.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=ENCORDADOR)"
+    },
+    {
+        "id": 3,
+        "uuid": "aca530ce-e929-4718-bd64-328f93a53f02",
+        "estado": "TERMINADO",
+        "fechaEntrada": "2022-06-15",
+        "fechaSalidaProgramada": "2022-06-20",
+        "fechaEntrega": "2022-07-10",
+        "precio": 10.2,
+        "usuario": "Usuario(id=3, uuid=8d3edd0d-378d-43af-b773-0e43d58942d9, nombre=Cristiano, apellido=Ronaldo, correo=cristiano@ronaldo.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=USUARIO)"
+    },
+    {
+        "id": 4,
+        "uuid": "c1c8d966-6657-4a72-a694-e8bbc7a0331c",
+        "estado": "TERMINADO",
+        "fechaEntrada": "2022-06-15",
+        "fechaSalidaProgramada": "2022-07-10",
+        "fechaEntrega": "2022-08-10",
+        "precio": 10.2,
+        "usuario": "Usuario(id=4, uuid=5e737639-3b32-40ae-b6c7-a2f4dfd72219, nombre=Rafael, apellido=Nadal, correo=rafael@nadal.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=ADMINISTRADOR)"
+    }
+]

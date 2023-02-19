@@ -1,0 +1,12 @@
+[
+    {
+        "id": 0,
+        "uuid": "116d5346-9f00-442a-ae81-b2fd32d88570",
+        "estado": "EN_PROCESO",
+        "fechaEntrada": "2022-03-15",
+        "fechaSalidaProgramada": "2022-05-10",
+        "fechaEntrega": "2022-06-07",
+        "precio": 10.2,
+        "usuario": "Usuario(id=0, uuid=64b86a11-f5de-469f-bc19-ec90b85ca361, nombre=Alfonso, apellido=Cabello, correo=alfonso@cabello.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=USUARIO)"
+    }
+]
