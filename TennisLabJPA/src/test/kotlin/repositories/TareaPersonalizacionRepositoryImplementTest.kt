@@ -52,7 +52,7 @@ class TareaPersonalizacionRepositoryImplementTest {
     )
 
     @AfterEach
-    fun tearDown() {
+    fun eliminar() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM TareaPersonalizacion")
             query.executeUpdate()
@@ -60,7 +60,7 @@ class TareaPersonalizacionRepositoryImplementTest {
     }
 
     @BeforeEach
-    fun beforeEach() {
+    fun porCadaUna() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM TareaPersonalizacion")
             query.executeUpdate()
@@ -69,7 +69,7 @@ class TareaPersonalizacionRepositoryImplementTest {
     }
 
     @BeforeAll
-    fun setUp() {
+    fun guardado() {
         usuarioRepositoryImplement.save(usuario)
         pedidoRepositoryImplement.save(pedido)
     }
@@ -88,14 +88,14 @@ class TareaPersonalizacionRepositoryImplementTest {
     }
 
     @Test
-    fun findByIdNoExiste() {
+    fun findByIdNull() {
         val res = tareaPersonalizacionRepositoryImplement.findById(-5)
         assert(res == null)
 
     }
 
     @Test
-    fun saveInsert() {
+    fun save() {
         val res = tareaPersonalizacionRepositoryImplement.save(tarea)
 
         assertAll(
@@ -117,7 +117,7 @@ class TareaPersonalizacionRepositoryImplementTest {
     }
 
     @Test
-    fun deleteNoExiste() {
+    fun deleteNull() {
         val res = tareaPersonalizacionRepositoryImplement.delete(tarea)
         assert(!res)
     }

@@ -1,23 +1,23 @@
 [
     {
         "id": 2,
-        "uuid": "3091cfbc-71ef-483f-8372-eacc9823aa53",
+        "uuid": "e33ba546-d864-450c-adaa-5f52dfd3c06d",
         "fechaInicio": "2022-07-14T09:10",
         "fechaFinal": "2022-08-20T10:20",
-        "usuario": "Usuario(id=2, uuid=71c7391a-2bfa-4ca4-8732-82d81cf9e8e8, nombre=Fernando, apellido=Alonso, correo=fernado@alonso.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=ENCORDADOR)"
+        "usuario": "Usuario(id=2, uuid=fb6cc475-5e60-4ab0-ba0b-97ea7a50e2b1, nombre=Fernando, apellido=Alonso, correo=fernado@alonso.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=ENCORDADOR)"
     },
     {
         "id": 1,
-        "uuid": "ed9fd745-06ee-438d-bf3d-3abfa7952ff3",
+        "uuid": "b657e1d5-4f06-4040-9864-294457243a38",
         "fechaInicio": "2022-08-14T09:10",
         "fechaFinal": "2022-09-20T10:20",
-        "usuario": "Usuario(id=1, uuid=9dcfb86a-dc9a-4ed2-8fa8-bcc8a4c3d31e, nombre=Marcelo, apellido=Alvarez, correo=marcelo@alvarez.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=ADMINISTRADOR)"
+        "usuario": "Usuario(id=1, uuid=8842e8a8-34bd-48a5-aa58-d2c293b81676, nombre=Marcelo, apellido=Alvarez, correo=marcelo@alvarez.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=ADMINISTRADOR)"
     },
     {
         "id": 0,
-        "uuid": "17cc88e3-cfbc-4da0-ad02-9b01547a4349",
+        "uuid": "9e0c217f-9ace-46b2-a126-ccfa1f482e4d",
         "fechaInicio": "2022-10-14T09:10",
         "fechaFinal": "2022-11-20T10:20",
-        "usuario": "Usuario(id=0, uuid=013079f8-46fb-4b6e-8dcc-bad2817dbedb, nombre=Alfonso, apellido=Cabello, correo=alfonso@cabello.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=USUARIO)"
+        "usuario": "Usuario(id=0, uuid=64b86a11-f5de-469f-bc19-ec90b85ca361, nombre=Alfonso, apellido=Cabello, correo=alfonso@cabello.com, password=03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4, tipoUsuario=USUARIO)"
     }
 ]

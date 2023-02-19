@@ -20,7 +20,11 @@ data class PedidoDTO(
     val usuario: String,
 
     )
-
+/**
+ * Sirve para pasar a ficheros de una forma más simple, cuando lo llamemos en el main para las consultas.
+ *
+ * @return Pedido en DTO.
+ */
 fun Pedido.toDTO(): PedidoDTO {
     return PedidoDTO(
         id = id,

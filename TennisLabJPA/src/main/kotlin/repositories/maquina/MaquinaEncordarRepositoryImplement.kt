@@ -9,6 +9,11 @@ import javax.persistence.TypedQuery
 private val logger = KotlinLogging.logger {}
 
 class MaquinaEncordarRepositoryImplement : IMaquinaEncordarRepository {
+    /**
+     * Find all
+     *
+     * @return Devuelve todas las Máquinas Enncordadas.
+     */
     override fun findAll(): List<MaquinaEncordar> {
         logger.debug { "findAll()" }
         var maquinas = mutableListOf<MaquinaEncordar>()
@@ -20,6 +25,12 @@ class MaquinaEncordarRepositoryImplement : IMaquinaEncordarRepository {
         return maquinas
     }
 
+    /**
+     * Find by id
+     *
+     * @param id
+     * @return Devuelve la máquina encordada por su id
+     */
     override fun findById(id: Int): MaquinaEncordar? {
         logger.debug { "findById($id)" }
         var maquina: MaquinaEncordar? = null
@@ -29,6 +40,12 @@ class MaquinaEncordarRepositoryImplement : IMaquinaEncordarRepository {
         return maquina
     }
 
+    /**
+     * Save
+     *
+     * @param entity
+     * @return Devuelve la máquina encordada insertada.
+     */
     override fun save(entity: MaquinaEncordar): MaquinaEncordar {
         logger.debug { "save($entity)" }
         HibernateManager.transaction {
@@ -37,6 +54,12 @@ class MaquinaEncordarRepositoryImplement : IMaquinaEncordarRepository {
         return entity
     }
 
+    /**
+     * Delete
+     *
+     * @param entity
+     * @return Devuelve true si se ha borrado la máquina o false en caso negativo.
+     */
     override fun delete(entity: MaquinaEncordar): Boolean {
         var res = false
         HibernateManager.transaction {

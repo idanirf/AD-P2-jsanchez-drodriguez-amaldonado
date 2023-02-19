@@ -9,6 +9,11 @@ import javax.persistence.TypedQuery
 private val logger = KotlinLogging.logger {}
 
 class TareaEncordadoRepositoryImplement : ITareaEncordadoRepository {
+    /**
+     * Find all
+     *
+     * @return Devuelve todas las tareas encordadas.
+     */
     override fun findAll(): List<TareaEncordado> {
         logger.debug { "findAll()" }
         var tareas = mutableListOf<TareaEncordado>()
@@ -20,6 +25,12 @@ class TareaEncordadoRepositoryImplement : ITareaEncordadoRepository {
         return tareas
     }
 
+    /**
+     * Find by id
+     *
+     * @param id
+     * @return Devuelve la tarea encordada por su id.
+     */
     override fun findById(id: Int): TareaEncordado? {
         logger.debug { "findById($id)" }
         var tarea: TareaEncordado? = null
@@ -29,6 +40,12 @@ class TareaEncordadoRepositoryImplement : ITareaEncordadoRepository {
         return tarea
     }
 
+    /**
+     * Save
+     *
+     * @param entity
+     * @return Devuelve la tarea encordada insertada.
+     */
     override fun save(entity: TareaEncordado): TareaEncordado {
         logger.debug { "save($entity)" }
         HibernateManager.transaction {
@@ -37,6 +54,12 @@ class TareaEncordadoRepositoryImplement : ITareaEncordadoRepository {
         return entity
     }
 
+    /**
+     * Delete
+     *
+     * @param entity
+     * @return Devuelve true si se ha borrado la tarea encordada o false en caso negativo.
+     */
     override fun delete(entity: TareaEncordado): Boolean {
         var res = false
         HibernateManager.transaction {

@@ -7,6 +7,11 @@ import models.MaquinaPersonalizar
 import javax.persistence.TypedQuery
 
 class MaquinaPersonalizarRepositoryImplement : IMaquinaPersonalizarRepository {
+    /**
+     * Find all
+     *
+     * @return Devuelve todas las Máquinas Personalizar.
+     */
     override fun findAll(): List<MaquinaPersonalizar> {
         logger.debug { "findAll()" }
         var maquinas = mutableListOf<MaquinaPersonalizar>()
@@ -18,6 +23,12 @@ class MaquinaPersonalizarRepositoryImplement : IMaquinaPersonalizarRepository {
         return maquinas
     }
 
+    /**
+     * Find by id
+     *
+     * @param id
+     * @return Devuelve la máquina personalizar por su id.
+     */
     override fun findById(id: Int): MaquinaPersonalizar? {
         logger.debug { "findById($id)" }
         var maquina: MaquinaPersonalizar? = null
@@ -27,6 +38,12 @@ class MaquinaPersonalizarRepositoryImplement : IMaquinaPersonalizarRepository {
         return maquina
     }
 
+    /**
+     * Save
+     *
+     * @param entity
+     * @return  Devuelve la máquina personalizar insertada.
+     */
     override fun save(entity: MaquinaPersonalizar): MaquinaPersonalizar {
         HibernateManager.transaction {
             manager.merge(entity)
@@ -34,6 +51,12 @@ class MaquinaPersonalizarRepositoryImplement : IMaquinaPersonalizarRepository {
         return entity
     }
 
+    /**
+     * Delete
+     *
+     * @param entity
+     * @return Devuelve true si se ha borrado la máquina o false en caso negativo.
+     */
     override fun delete(entity: MaquinaPersonalizar): Boolean {
         var res = false
         HibernateManager.transaction {

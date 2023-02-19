@@ -51,7 +51,7 @@ class ProductoRepositoryImplementTest {
     )
 
     @AfterEach
-    fun tearDown() {
+    fun eliminar() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM Producto")
             query.executeUpdate()
@@ -59,7 +59,7 @@ class ProductoRepositoryImplementTest {
     }
 
     @BeforeEach
-    fun beforeEach() {
+    fun porCadaUna() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM Producto")
             query.executeUpdate()
@@ -67,7 +67,7 @@ class ProductoRepositoryImplementTest {
     }
 
     @BeforeAll
-    fun setUp() {
+    fun guardado() {
         usuarioRepositoryImplement.save(usuario)
         pedidoRepositoryImplement.save(pedido)
     }
@@ -87,14 +87,14 @@ class ProductoRepositoryImplementTest {
     }
 
     @Test
-    fun findByIdNoExiste() {
+    fun findByIdNull() {
         val res = productoRepositoryImplement.findById(-5)
 
         assert(res == null)
     }
 
     @Test
-    fun saveInsert() {
+    fun save() {
         val res = productoRepositoryImplement.save(producto)
 
         assertAll(
@@ -116,7 +116,7 @@ class ProductoRepositoryImplementTest {
         assert(res)
     }
     @Test
-    fun deleteNoExiste(){
+    fun deleteNull(){
         val res = productoRepositoryImplement.delete(producto)
 
         assert(!res)

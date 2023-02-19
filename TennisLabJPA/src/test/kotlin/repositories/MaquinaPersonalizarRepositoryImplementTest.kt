@@ -41,7 +41,7 @@ class MaquinaPersonalizarRepositoryImplementTest {
     )
 
     @AfterEach
-    fun tearDown() {
+    fun eliminar() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM MaquinaPersonalizar")
             query.executeUpdate()
@@ -49,7 +49,7 @@ class MaquinaPersonalizarRepositoryImplementTest {
     }
 
     @BeforeEach
-    fun beforeEach() {
+    fun porCadaUna() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM MaquinaPersonalizar")
             query.executeUpdate()
@@ -59,7 +59,7 @@ class MaquinaPersonalizarRepositoryImplementTest {
     }
 
     @BeforeAll
-    fun setUp() {
+    fun guardado() {
         usuarioRepositoryImplement.save(getUsuariosInit()[4])
         turnoRepositoryImplement.save(turno)
     }
@@ -83,7 +83,7 @@ class MaquinaPersonalizarRepositoryImplementTest {
     }
 
     @Test
-    fun findByIdNoExiste() {
+    fun findByIdNull() {
         val res = maquinaPersonalizarRepositoryImplement.findById(-5)
 
         assert(res == null)
@@ -91,7 +91,7 @@ class MaquinaPersonalizarRepositoryImplementTest {
     }
 
     @Test
-    fun saveInsert() {
+    fun save() {
         val res = maquinaPersonalizarRepositoryImplement.save(maquina)
 
         Assertions.assertAll(
@@ -118,7 +118,7 @@ class MaquinaPersonalizarRepositoryImplementTest {
     }
 
     @Test
-    fun deleteNoExiste() {
+    fun deleteNull() {
         val res = maquinaPersonalizarRepositoryImplement.delete(maquina)
 
         assert(!res)

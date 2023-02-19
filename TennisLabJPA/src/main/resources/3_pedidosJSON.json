@@ -1,0 +1,22 @@
+[
+    {
+        "id": 0,
+        "uuid": "104cd3b6-bc00-41f6-932d-c3777d49c5cf",
+        "estado": "TERMINADO",
+        "fechaEntrada": "2022-03-15",
+        "fechaSalidaProgramada": "2022-05-10",
+        "fechaEntrega": "2022-06-07",
+        "precio": 10.2,
+        "usuario": "Usuario(id=0, uuid=d0801ee4-75e8-452b-bafe-c67df4fb4906, nombre=Alfonso, apellido=Cabello, correo=alfonso@cabello.com, password=1234, tipoUsuario=USUARIO)"
+    },
+    {
+        "id": 4,
+        "uuid": "3644cfc0-9c09-418e-a6c5-178693f04c19",
+        "estado": "TERMINADO",
+        "fechaEntrada": "2022-06-15",
+        "fechaSalidaProgramada": "2022-07-10",
+        "fechaEntrega": "2022-08-10",
+        "precio": 10.2,
+        "usuario": "Usuario(id=4, uuid=650ecfd0-93af-4456-9ea5-8f9878af2608, nombre=Rafael, apellido=Nadal, correo=rafael@nadal.com, password=1234, tipoUsuario=ADMINISTRADOR)"
+    }
+]

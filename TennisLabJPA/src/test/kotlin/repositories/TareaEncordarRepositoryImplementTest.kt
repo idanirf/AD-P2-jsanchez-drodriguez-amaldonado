@@ -54,7 +54,7 @@ internal class TareaEncordarRepositoryImplementTest {
     )
 
     @AfterEach
-    fun tearDown() {
+    fun eliminar() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM TareaEncordado")
             query.executeUpdate()
@@ -62,7 +62,7 @@ internal class TareaEncordarRepositoryImplementTest {
     }
 
     @BeforeEach
-    fun beforeEach() {
+    fun porCadaUna() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM TareaEncordado")
             query.executeUpdate()
@@ -71,7 +71,7 @@ internal class TareaEncordarRepositoryImplementTest {
     }
 
     @BeforeAll
-    fun setUp() {
+    fun guardado() {
         usuarioRepositoryImplement.save(usuario)
         pedidoRepositoryImplement.save(pedido)
     }
@@ -93,7 +93,7 @@ internal class TareaEncordarRepositoryImplementTest {
     }
 
     @Test
-    fun findByIdNoExiste() {
+    fun findByIdNull() {
         val res = tareasEncordadoRepositoryImplement.findById(-5)
 
         assert(res == null)
@@ -101,7 +101,7 @@ internal class TareaEncordarRepositoryImplementTest {
     }
 
     @Test
-    fun saveInsert() {
+    fun save() {
         val res = tareasEncordadoRepositoryImplement.save(tarea)
 
         assertAll(
@@ -126,7 +126,7 @@ internal class TareaEncordarRepositoryImplementTest {
     }
 
     @Test
-    fun deleteNoExiste() {
+    fun deleteNull() {
         val res = tareasEncordadoRepositoryImplement.delete(tarea)
 
         assert(!res)

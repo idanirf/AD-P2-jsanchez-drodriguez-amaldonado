@@ -41,17 +41,17 @@ internal class PedidoRepositoryImplementTest {
     )
 
     @AfterEach
-    fun tearDown() {
+    fun eliminar() {
         HibernateManager.transaction {
-            val query = HibernateManager.manager.createNativeQuery("DELETE FROM Turnos")
+            val query = HibernateManager.manager.createNativeQuery("DELETE FROM Pedido")
             query.executeUpdate()
         }
     }
 
     @BeforeEach
-    fun beforeEach() {
+    fun porCadaUna() {
         HibernateManager.transaction {
-            val query = HibernateManager.manager.createNativeQuery("DELETE FROM Turnos")
+            val query = HibernateManager.manager.createNativeQuery("DELETE FROM Pedido")
             query.executeUpdate()
         }
         HibernateManager.open()
@@ -75,7 +75,7 @@ internal class PedidoRepositoryImplementTest {
     }
 
     @Test
-    fun findByIdNoExiste() {
+    fun findByIdNull() {
         val res = pedidoRepositoryImplement.findById(-5)
 
         assert(res == null)
@@ -83,7 +83,7 @@ internal class PedidoRepositoryImplementTest {
     }
 
     @Test
-    fun saveInsert() {
+    fun save() {
         usuarioRepositoryImplement.save(usuario)
         val res = pedidoRepositoryImplement.save(pedido)
 
@@ -109,7 +109,7 @@ internal class PedidoRepositoryImplementTest {
     }
 
     @Test
-    fun deleteNoExiste() {
+    fun deleteNull() {
         val res = pedidoRepositoryImplement.delete(pedido)
 
         assert(!res)

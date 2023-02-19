@@ -33,14 +33,14 @@ internal class TurnoRepositoryImplementTest{
         usuario = usuario
     )
     @AfterEach
-    fun tearDown(){
+    fun eliminar(){
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM Turnos")
             query.executeUpdate()
         }
     }
     @BeforeEach
-    fun beforeEach(){
+    fun porCadaUna(){
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM Turnos")
             query.executeUpdate()
@@ -61,12 +61,12 @@ internal class TurnoRepositoryImplementTest{
         assert(res == turno)
     }
     @Test
-    fun findByIdNoExiste(){
+    fun findByIdNull(){
         val res = turnoRepositoryImplement.findById(-5)
         assert(res == null)
     }
     @Test
-    fun saveInsert(){
+    fun save(){
         usuarioRepositoryImplement.save(usuario)
         val res = turnoRepositoryImplement.save(turno)
 
@@ -89,7 +89,7 @@ internal class TurnoRepositoryImplementTest{
     }
 
     @Test
-    fun deleteNoExiste() {
+    fun deleteNull() {
         val res = turnoRepositoryImplement.delete(turno)
 
         assert(!res)

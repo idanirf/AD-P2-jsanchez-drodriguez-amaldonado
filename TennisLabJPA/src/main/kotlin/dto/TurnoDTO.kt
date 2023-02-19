@@ -16,6 +16,11 @@ data class TurnoDTO(
     val fechaFinal: String,
     val usuario: String
 )
+
+/**
+ *
+ * Sirve para pasar a ficheros de una forma más simple, cuando lo llamemos en el main para las consultas.
+ */
 fun Turno.toDTO(): TurnoDTO {
     return TurnoDTO(
         id = id,

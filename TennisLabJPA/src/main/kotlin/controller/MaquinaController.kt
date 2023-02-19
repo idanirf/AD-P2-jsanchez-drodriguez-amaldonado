@@ -11,15 +11,31 @@ class MaquinaController(
     private val maquinaEncordarRepository: IMaquinaEncordarRepository = MaquinaEncordarRepositoryImplement(),
     private val maquinaPersonalizarRepository: IMaquinaPersonalizarRepository = MaquinaPersonalizarRepositoryImplement()
 ) {
-
+    /**
+     * Find all maquina encordar
+     *
+     * @return Devuelve los objetos desde su base de datos
+     */
     fun findAllMaquinaEncordar(): List<MaquinaEncordar> {
         return maquinaEncordarRepository.findAll()
     }
 
+    /**
+     * Find by id maquina encordar
+     *
+     * @param id
+     * @return devuelve las máquinas encordar insertadas
+     */
     fun findByIdMaquinaEncordar(id: Int): MaquinaEncordar? {
         return maquinaEncordarRepository.findById(id)
     }
 
+    /**
+     * Save maquina encordar
+     *
+     * @param maquinaEncordar
+     * @return devuelve las máquinas encordar guardadas.
+     */
     fun saveMaquinaEncordar(maquinaEncordar: MaquinaEncordar): MaquinaEncordar {
         return maquinaEncordarRepository.save(maquinaEncordar)
     }

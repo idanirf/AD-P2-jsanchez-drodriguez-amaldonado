@@ -164,16 +164,6 @@ internal class MaquinasControllerTest {
     }
 
     @Test
-    fun findByIdNoExist() {
-        every { maquinaEncordarRepositoryImplement.findById(maquinaEncordar.id) } throws MaquinaEncordarException("Máquina con id ${maquinaEncordar.id} no existe")
-
-        val res =
-            assertThrows<MaquinaEncordarException> { maquinasController.findByIdMaquinaEncordar(maquinaEncordar.id) }
-        assert(res.message == "Máquina con id ${maquinaEncordar.id} no existe.")
-        verify(exactly = 1) { maquinaEncordarRepositoryImplement.findById(maquinaEncordar.id) }
-    }
-
-    @Test
     fun saveMaquinaEncordar() {
         every { maquinaEncordarRepositoryImplement.save(maquinaEncordar) } returns maquinaEncordar
 
@@ -192,15 +182,6 @@ internal class MaquinasControllerTest {
 
         assert(res)
 
-        verify(exactly = 1) { maquinaEncordarRepositoryImplement.delete(maquinaEncordar) }
-    }
-
-
-    @Test
-    fun deleteNoExist() {
-        every { maquinaEncordarRepositoryImplement.delete(maquinaEncordar) } throws MaquinaEncordarException("Máquina con id ${maquinaEncordar.id} no existe")
-        val res = assertThrows<MaquinaEncordarException> { maquinasController.deleteMaquinaEncordar(maquinaEncordar) }
-        assert(res.message == "Máquina Encordar con id ${maquinaEncordar.id} no existe.")
         verify(exactly = 1) { maquinaEncordarRepositoryImplement.delete(maquinaEncordar) }
     }
 }

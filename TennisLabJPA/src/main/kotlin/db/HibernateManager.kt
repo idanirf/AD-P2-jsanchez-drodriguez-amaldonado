@@ -12,8 +12,8 @@ val logger = KotlinLogging.logger {}
 
 object HibernateManager : Closeable {
     private var entityManagerFactory = Persistence.createEntityManagerFactory("TennisLab")
-    lateinit var manager: EntityManager
-    private lateinit var transaction: EntityTransaction
+    var manager: EntityManager
+    private var transaction: EntityTransaction
 
     init {
         entityManagerFactory = Persistence.createEntityManagerFactory("TennisLab")
@@ -21,17 +21,31 @@ object HibernateManager : Closeable {
         transaction = manager.transaction
     }
 
+    /**
+     * Open: Abre el EnitityManager
+     *
+     */
     fun open() {
         logger.debug { "Iniciando EntityManagerFactory" }
         manager = entityManagerFactory.createEntityManager()
         transaction = manager.transaction
     }
 
+    /**
+     * Close: Cierra el entityManager.
+     *
+     */
     override fun close() {
         logger.debug { "Cerrando EntityManager" }
         manager.close()
     }
 
+    /**
+     * Query: Consultas
+     *
+     * @param operations
+     * @receiver
+     */
     fun query(operations: () -> Unit) {
         open()
         try {

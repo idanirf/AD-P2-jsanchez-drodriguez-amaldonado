@@ -37,17 +37,90 @@ Por otro lado, nos interesa mantener el histórico de los elementos del sistema 
 <br>
 Nuestro programa debe llamarse con un JAR de la siguiente manera: java -jar tennislab.jar.
 
+## Diagrama de clases
+![imagen](./img/diagrama.png)
 
-## Descripción
 
+***Justificación del diagrama de clases***
 
+A continuación explicamos la implementación del diagrama de clase que hemos desarrollado a partir de las indicaciones y requisitos del cliente.  
+
+Primero de todo vamos a identificar todas las clases que hemos implementado:  
+
+User  
+
+Turno  
+
+TareaEncordado  
+
+TareaPersonalizacion  
+
+MaquinaEncordar  
+
+MaquinaPersonalizar  
+
+Pedido  
+
+Producto  
+
+Entre estas clases se han creado relaciones para formar la arquitectura del software, más adelante explicaremos cada relación que se produce en el diagrama de clase.  
+
+Una de las primeras justificaciones que queremos dar es que hemos roto todas las herencias que se podían producir en el modelo de esta forma nos ha parecido más rápido a la hora de gestionar las relaciones entre las clases. Tecnológicamente también aportamos una explicación de esta forma a la hora por ejemplo de realizar una consulta la hacemos directamente sobre la clase a la hora de buscar será más rápido de la otra forma tendríamos que buscar la clase no heredada y de ahí saber qué tipo es en que hereda y ejecutar la consulta por lo tanto el tiempo sería mayor. 
+
+Vamos a comentar cada una de las clases y qué relación tiene con cada una de las clases del modelo.  
+
+Users: esta clase hace referencia a los usuarios registrados de nuestro sistema, de cada usuario recogeremos algunos datos como puede ser su contraseña que estará encriptada con sha256 o el tipo de usuario que es que le dará más o menos privilegios de realizar operaciones en el sistema.  
+
+Turno: con la clase turno registramos cada vez que un usuario que es de tipo empleado ha comenzado una nuevo turno, registrado su hora de inicio y su hora de fin hay que tener en cuenta que esta clase tiene una relación con Users de forma referenciada, ya que cada vez que registramos un turno a ese turno le asignamos el id del usuario que registra ese turno.  
+
+Pedido: los pedido registran las solicitudes que realizan los usuarios, hay que destacar que los pedidos están relacionados con las tareas y los usuarios, primero explicamos la relación que tiene con los usuarios.   
+
+Un pedido esta realizado por un usuario por lo tanto a ese pedido se le asigna el usuario que lo realiza, para hacer esta asignación lo hacemos por referencia al pedido le asignamos el id del usuario que realiza el pedido.  
+
+Ahora explicamos la relación que tiene los pedidos con las tareas de personalización y de encordar. Un pedido está formado por tareas, puede tener una o varias tareas pero nunca podrá ser null.  
+
+TareaEncordado: es una clase que hace la composición al pedido, contiene su id, y el resto de los campos propios de la clase, además tiene un campo que es el número de pedido nunca puede ser null, una tarea siempre tiene que estar asociada a un pedido, lo hacemos de forma referenciada.  
+
+TareaPersonalizacion: es otra clase que hace la composición del pedido, contiene su id, y el resto de los campos que son propios de la clase, además tiene un campo que hace referencia el número de pedido que nunca podrá ser null, es decir que una tarea siempre tiene que estar asociada a un pedido, lo hacemos de forma referenciada a la clase pedido, de esta forma es mucho más rápido ya que no es necesario embeber todo solo aquello que es necesario.  
+
+MaquinaEncordado: es una clase que utilizamos para registrar todas las máquinas de encordado existentes, hay que decir que comparte campos con las máquinas de personalización pero ya que hemos decidido que no exista herencia entre clases, cada clase de maquina tendrá sus propios campos.  
+
+Además cada máquina de encordado tendrá asociado un turno de esta forma podemos filtrar y limitar el número de máquinas que puede utilizar un usuario en cada turno.  
+
+MaquinaPersonalizacion: es una clase que utilizamos para registrar todas las máquinas de personalización existentes, hay que decir que comparte campos con las máquinas de encordado pero ya que hemos decidido que no exista herencia entre clases, cada clase de maquina tendrá sus propios campos.  
+
+Además cada máquina de encordado tendrá asociado un turno de esta forma podemos filtrar y limitar el número de máquinas que puede utilizar un usuario en cada turno.  
+
+Producto: son productos o servicios que podemos ofrecer y pueden obtener los clientes, tiene atributos uno de ellos es el stock que es la cantidad de elementos existentes de ese producto.  
+
+Tiene una relación con los pedido, la relación se hace de forma referenciada, para asignar un producto a un pedido hay que introducir el número de pedido que tenía asignado.  
+
+Relaciones:  
+
+Pedido-User: Es una relación 1-1 porque se ha decido para que el usuario esté dado de alta en la plataforma tiene que ser con un pedido, y por otro lado solo puede hacer un pedido en el momento.  
+
+Pedido-Producto: Es una relación 1-1* porque al hacer un pedido obligatoriamente tiene que haber un producto en el pedido y un máximo indefinido.  
+
+User-Turno: Es una relación 1-0..N porque tiene que haber un usuario para que pueda realizar el turno de trabajo, además sin no hay algún trabajador disponible no puede haber un turno y por ello no hay una máquina en uso ni una o varias tareas que se vayan a cumplir durante ese turno.  
+
+  
+
+Turno-Maquina Encordar: Se trata de una relación 0..N-1 porque la máquinaEncordar siempre va a existir aunque no se esté realizando ningún turno en ese momento, mientras que puede haber varios turnos que hagan uso de máquinas.  
+
+  
+
+Turno-MaquinaPersonalizar: Al igual que el anterior, se trata de una relación 0..N-1 porque que la máquinaPersonalizar siempre va a existir aunque no se esté realizando ningún turno en ese momento, mientras que puede haber varios turnos que hagan uso de máquinas personalizadoras.
 
 
 ## Funcionamiento
+Una vez ejecutamos el programa podemos ver una demostración de su funcionamiento, en la que se puede ver como se crean los usuarios, los pedidos, las tareas, las máquinas, los turnos y los productos.
 
 
 
-## Analisis de datos
+
+## Enlace al video
+https://www.youtube.com/watch?v=0_qt9_vKdUE
+
 
 
 
@@ -61,4 +134,5 @@ Nuestro programa debe llamarse con un JAR de la siguiente manera: java -jar tenn
 ## Contacto 
 * daniel.rodriguezfernandez@alumno.iesluisvives.org
 * jorge.sanchezberrocoso@alumno.iesluisvives.org
+* alfredo.maldonado@alumno.iesluisvives.org
 

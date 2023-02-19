@@ -40,7 +40,7 @@ internal class MaquinaEncordarRepositoryImplementTest {
     )
 
     @AfterEach
-    fun tearDown() {
+    fun eliminar() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM MaquinasEncordar")
             query.executeUpdate()
@@ -48,7 +48,7 @@ internal class MaquinaEncordarRepositoryImplementTest {
     }
 
     @BeforeEach
-    fun beforeEach() {
+    fun porCadaUna() {
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM MaquinasEncordar")
             query.executeUpdate()
@@ -58,7 +58,7 @@ internal class MaquinaEncordarRepositoryImplementTest {
     }
 
     @BeforeAll
-    fun setUp() {
+    fun guardado() {
         usuarioRepositoryImplement.save(getUsuariosInit()[2])
         turnoRepositoryImplement.save(turno)
     }
@@ -80,7 +80,7 @@ internal class MaquinaEncordarRepositoryImplementTest {
     }
 
     @Test
-    fun findByIdNoExiste() {
+    fun findByIdNull() {
         val res = maquinaEncordarRepositoryImplement.findById(-5)
 
         assert(res == null)
@@ -88,7 +88,7 @@ internal class MaquinaEncordarRepositoryImplementTest {
     }
 
     @Test
-    fun saveInsert() {
+    fun save() {
         val res = maquinaEncordarRepositoryImplement.save(maquina)
 
         Assertions.assertAll(
@@ -115,7 +115,7 @@ internal class MaquinaEncordarRepositoryImplementTest {
     }
 
     @Test
-    fun deleteNoExiste() {
+    fun deleteNull() {
         val res = maquinaEncordarRepositoryImplement.delete(maquina)
 
         assert(!res)

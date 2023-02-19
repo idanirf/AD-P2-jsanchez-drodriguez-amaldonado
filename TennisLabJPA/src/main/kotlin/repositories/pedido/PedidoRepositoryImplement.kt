@@ -9,6 +9,11 @@ import javax.persistence.TypedQuery
 private val logger = KotlinLogging.logger {}
 
 class PedidoRepositoryImplement : IPedidoRepository {
+    /**
+     * Find all
+     *
+     * @return Devuelve todos los pedidos.
+     */
     override fun findAll(): List<Pedido> {
         logger.debug { "findAll()" }
         var pedidos = mutableListOf<Pedido>()
@@ -19,6 +24,12 @@ class PedidoRepositoryImplement : IPedidoRepository {
         return pedidos
     }
 
+    /**
+     * Find by id
+     *
+     * @param id
+     * @return Devuelve el pedido por su id.
+     */
     override fun findById(id: Int): Pedido? {
         logger.debug { "findById($id)" }
         var pedido: Pedido? = null
@@ -28,6 +39,12 @@ class PedidoRepositoryImplement : IPedidoRepository {
         return pedido
     }
 
+    /**
+     * Save
+     *
+     * @param entity
+     * @return Devuelve el pedido insertado.
+     */
     override fun save(entity: Pedido): Pedido {
         HibernateManager.transaction {
             manager.merge(entity)
@@ -35,6 +52,12 @@ class PedidoRepositoryImplement : IPedidoRepository {
         return entity
     }
 
+    /**
+     * Delete
+     *
+     * @param entity
+     * @return Devuelve true si se ha borrado el pedido o false en caso negativo.
+     */
     override fun delete(entity: Pedido): Boolean {
         var res = false
         HibernateManager.transaction {

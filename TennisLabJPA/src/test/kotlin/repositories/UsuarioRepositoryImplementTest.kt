@@ -22,14 +22,14 @@ internal class UsuarioRepositoryImplementTest {
         tipoUsuario = TipoUsuario.USUARIO
     )
     @AfterEach
-    fun tearDown(){
+    fun eliminar(){
         HibernateManager.transaction {
             val query= HibernateManager.manager.createNativeQuery("DELETE FROM Usuario")
             query.executeUpdate()
         }
     }
     @BeforeEach
-    fun beforeEach(){
+    fun porCadaUna(){
         HibernateManager.transaction {
             val query = HibernateManager.manager.createNativeQuery("DELETE FROM Usuario")
             query.executeUpdate()
@@ -51,13 +51,13 @@ internal class UsuarioRepositoryImplementTest {
         assert(res == usuario)
     }
     @Test
-    fun findByIdNoExiste(){
+    fun findByIdNull(){
         val res = usuarioRepositoryImplement.findById(-5)
         assert(res==null)
     }
     //Da fallo
     @Test
-    fun saveInsert(){
+    fun save(){
         val res = usuarioRepositoryImplement.save(usuario)
 
         assertAll(
@@ -77,7 +77,7 @@ internal class UsuarioRepositoryImplementTest {
         assert(res)
     }
     @Test
-    fun deleteNoExiste(){
+    fun deleteNull(){
         val res = usuarioRepositoryImplement.delete(usuario)
         assert(!res)
     }

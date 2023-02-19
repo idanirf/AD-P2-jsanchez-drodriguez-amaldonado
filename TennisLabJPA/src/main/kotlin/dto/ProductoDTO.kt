@@ -21,7 +21,11 @@ data class ProductoDTO(
     val tipoProducto: String,
 
     )
-
+/**
+ * Sirve para pasar a ficheros de una forma más simple, cuando lo llamemos en el main para las consultas.
+ *
+ * @return Producto en DTO.
+ */
 fun Producto.toDTO(): ProductoDTO {
     return ProductoDTO(
         id = id,
